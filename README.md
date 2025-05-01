@@ -27,7 +27,7 @@ A simple RESTful backend service built with **Go**, **SQLite**, **GORM**, and **
 
  go run main.go
 
- ## The server will start at: http://localhost:8080
+ The server will start at: http://localhost:8080
 
 #  Run with Docker
 
@@ -39,3 +39,11 @@ docker run -p 8080:8080 wallet-api
 
 #  API Endpoints
 
+ - User
+   POST /users
+   Create a new user
+   Body:
+   {
+        "name": "Ashish",
+        "email": "ashish@example.com"
+   }
