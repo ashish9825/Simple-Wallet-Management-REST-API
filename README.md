@@ -48,7 +48,8 @@ docker run -p 8080:8080 wallet-api
 ###  Users
 
 - **POST** `/users`  
-  ➤ Create a new user  
+  ➤ Create a new user
+  
   **Request Body**:
   ```json
   {
@@ -59,7 +60,8 @@ docker run -p 8080:8080 wallet-api
 ###  Wallets
 
 - **POST** `/wallets`  
-  ➤  Create a wallet for a user
+  ➤ Create a wallet for a user
+  
   **Request Body**:
   ```json
   {
@@ -69,6 +71,7 @@ docker run -p 8080:8080 wallet-api
 ### Transactions
 - **POST** `/transactions`  
   ➤ Transfer funds from one wallet to another
+  
   **Request Body**:
   ```json
   {
