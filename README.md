@@ -15,15 +15,17 @@ A simple RESTful backend service built with **Go**, **SQLite**, **GORM**, and **
 
 ## Tech Stack 
 
-   Technology           Description                   
+   Technology     and      Description                   
      
- - Go (Golang)          Backend language               
- - net/http + Gin       HTTP framework (if used)       
- - SQLite               Lightweight SQL database       
- - GORM                 ORM for Go                     
- - Docker               Containerization      
+ - Go (Golang)        ---->  Backend language               
+ - net/http + Gin     ---->  HTTP framework   
+ - SQLite             ---->  Lightweight SQL database       
+ - GORM               ---->  ORM for Go                     
+ - Docker             ---->  Containerization      
 
- # Run the server
+# Clone the Repository
+
+# Run the server
 ```
  go run main.go
 ```
@@ -43,7 +45,7 @@ docker run -p 8080:8080 wallet-api
 ```
 
 # API Endpoints 
-### 👤 Users
+###  Users
 
 - **POST** `/users`  
   ➤ Create a new user  
@@ -54,7 +56,7 @@ docker run -p 8080:8080 wallet-api
     "email": "ashish@example.com"
   }
 
-### 👤 Wallets
+###  Wallets
 
 - **POST** `/wallets`  
   ➤  Create a wallet for a user
@@ -64,7 +66,7 @@ docker run -p 8080:8080 wallet-api
     "user_id": 1,
     "balance": 1000
   }
-
+### Transactions
 - **POST** `/transactions`  
   ➤ Transfer funds from one wallet to another
   **Request Body**:
@@ -119,5 +121,5 @@ curl -X POST http://localhost:8080/wallets/transfer \
 curl http://localhost:8080/wallets/1/transactions
 ```
 
-# 👤 Author
+# Author
 ### Ashish Chaudhary
