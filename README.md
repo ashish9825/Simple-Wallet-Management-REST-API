@@ -37,27 +37,53 @@ docker build -t wallet-api .
 ## Run container (basic)
 docker run -p 8080:8080 wallet-api
 
+# API Endpoints 
+### 👤 Users
+
+- **POST** `/users`  
+  ➤ Create a new user  
+  **Request Body**:
+  ```json
+  {
+    "name": "Ashish",
+    "email": "ashish@example.com"
+  }
+
 # Sample cURL Commands
 
 ## Create User
+### Run the below command on terminal in the project directory 
 curl -X POST http://localhost:8080/users \
   -H "Content-Type: application/json" \
   -d '{"name":"Ashish","email":"ashish@example.com"}'
 
-## Create Wallet
+## Create Wallet for the User 
+### Run the below command on terminal in the project directory
 curl -X POST http://localhost:8080/wallets \
   -H "Content-Type: application/json" \
-  -d '{"user_id":1}'
+  -d '{
+    "user_id": 1,
+    "balance": 1000
+  }'
+
 
 ## Check Wallet Balance
+### Run the below command on terminal in the project directory
 curl http://localhost:8080/wallets/1/balance
 
 ## Transfer Funds
-curl -X POST http://localhost:8080/transactions \
+### Run the below command on terminal in the project directory
+curl -X POST http://localhost:8080/wallets/transfer \
   -H "Content-Type: application/json" \
-  -d '{"from_wallet_id":1,"to_wallet_id":2,"amount":50}'
+  -d '{
+    "from_wallet_id": 1,
+    "to_wallet_id": 2,
+    "amount": 200
+  }'
+
 
 ## List Transactions
+### Run the below command on terminal in the project directory
 curl http://localhost:8080/wallets/1/transactions
 
 # 👤 Author
